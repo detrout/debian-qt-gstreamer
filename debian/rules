@@ -27,4 +27,4 @@ override_dh_gencontrol:
 	dh_gencontrol
 
 %:
-	dh $@ --parallel --dbg-package=qtgstreamer-dbg
+	dh $@ --parallel --dbg-package=qtgstreamer-dbg --with pkgkde-symbolshelper

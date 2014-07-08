@@ -6,6 +6,7 @@ Uploaders: George Kiagiadakis <kiagiadakis.george@gmail.com>,
            Diane Trout <diane@ghic.org>
 Build-Depends: debhelper (>= 9),
                dpkg-dev (>= 1.16.1~),
+               pkg-kde-tools (>= 0.12),
                cmake (>= 2.8.6),
                libqt4-dev (>= 4:4.8.1),
                libqt4-opengl-dev (>= 4:4.8.1),
