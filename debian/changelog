@@ -1,18 +1,6 @@
-qt-gstreamer (1.1.90-1ubuntu2) trusty; urgency=medium
+qt-gstreamer (1.2.0-1) trusty; urgency=medium
 
-  * Use pkg-kde-tools to help manage symbols.
-
- -- Diane Trout <diane@ghic.org>  Tue, 08 Jul 2014 10:40:49 -0700
-
-qt-gstreamer (1.1.90-1ubuntu1) trusty; urgency=medium
-
-  * Update libqtgstreamer for amd64 and i386
-
- -- Diane Trout <diane@ghic.org>  Mon, 07 Jul 2014 21:29:15 -0700
-
-qt-gstreamer (1.1.90-1) trusty; urgency=medium
-
-  * Import upstream version 1.1.90
+  * Import upstream version 1.2.0
   * Add watch file.
   * Bump Standards-Version to 3.9.5. No changes needed.
   * Add myself to uploaders.
@@ -23,6 +11,8 @@ qt-gstreamer (1.1.90-1) trusty; urgency=medium
   * Update path for qtgstreamer-dev cmake configuration files.
   * Add Multi-Arch: same to qtgstreamer-dbg
   * Link to debian provided jquery.
+  * Update libqtgstreamer for amd64 and i386
+  * Add dependency on pkg-kde-tools to use pkgkde-symbolshelper to manage symbols.
 
  -- Diane Trout <diane@ghic.org>  Tue, 01 Jul 2014 20:13:24 -0700
 
