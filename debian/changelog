@@ -1,4 +1,4 @@
-qt-gstreamer (1.2.0-1) trusty; urgency=medium
+qt-gstreamer (1.2.0-1ubuntu1) trusty; urgency=medium
 
   * Import upstream version 1.2.0
   * Add watch file.
