@@ -1,0 +1,7 @@
+
+usr/include/Qt5GStreamer/*
+usr/lib/*/cmake/Qt5GStreamer/*
+usr/lib/*/libQt5GLib*.so
+usr/lib/*/libQt5GStreamer*.so
+usr/lib/*/pkgconfig/Qt5GLib*
+usr/lib/*/pkgconfig/Qt5GStreamer*

@@ -1,0 +1,34 @@
+# SymbolsHelper-Confirmed: 1.2.0 amd64
+libQt5GStreamerQuick-1.0.so.0 libqt5gstreamerquick-1.0-0 #MINVER#
+ _ZN4QGst5Quick12VideoSurface11qt_metacallEN11QMetaObject4CallEiPPv@Base 1.2.0
+ _ZN4QGst5Quick12VideoSurface11qt_metacastEPKc@Base 1.2.0
+ _ZN4QGst5Quick12VideoSurface16staticMetaObjectE@Base 1.2.0
+ _ZN4QGst5Quick12VideoSurfaceC1EP7QObject@Base 1.2.0
+ _ZN4QGst5Quick12VideoSurfaceC2EP7QObject@Base 1.2.0
+ _ZN4QGst5Quick12VideoSurfaceD0Ev@Base 1.2.0
+ _ZN4QGst5Quick12VideoSurfaceD1Ev@Base 1.2.0
+ _ZN4QGst5Quick12VideoSurfaceD2Ev@Base 1.2.0
+ _ZN4QGst5Quick9VideoItem10setSurfaceEPNS0_12VideoSurfaceE@Base 1.2.0
+ _ZN4QGst5Quick9VideoItem11qt_metacallEN11QMetaObject4CallEiPPv@Base 1.2.0
+ _ZN4QGst5Quick9VideoItem11qt_metacastEPKc@Base 1.2.0
+ _ZN4QGst5Quick9VideoItem15updatePaintNodeEP7QSGNodePN10QQuickItem19UpdatePaintNodeDataE@Base 1.2.0
+ _ZN4QGst5Quick9VideoItem16staticMetaObjectE@Base 1.2.0
+ _ZN4QGst5Quick9VideoItemC1EP10QQuickItem@Base 1.2.0
+ _ZN4QGst5Quick9VideoItemC2EP10QQuickItem@Base 1.2.0
+ _ZN4QGst5Quick9VideoItemD0Ev@Base 1.2.0
+ _ZN4QGst5Quick9VideoItemD1Ev@Base 1.2.0
+ _ZN4QGst5Quick9VideoItemD2Ev@Base 1.2.0
+ _ZNK4QGst5Quick12VideoSurface10metaObjectEv@Base 1.2.0
+ _ZNK4QGst5Quick12VideoSurface9videoSinkEv@Base 1.2.0
+ _ZNK4QGst5Quick9VideoItem10metaObjectEv@Base 1.2.0
+ _ZNK4QGst5Quick9VideoItem7surfaceEv@Base 1.2.0
+ _ZTIN4QGst5Quick12VideoSurfaceE@Base 1.2.0
+ _ZTIN4QGst5Quick9VideoItemE@Base 1.2.0
+ _ZTIN5QGlib7Private15ClosureDataBaseE@Base 1.2.0
+ _ZTSN4QGst5Quick12VideoSurfaceE@Base 1.2.0
+ _ZTSN4QGst5Quick9VideoItemE@Base 1.2.0
+ _ZTSN5QGlib7Private15ClosureDataBaseE@Base 1.2.0
+ _ZTVN4QGst5Quick12VideoSurfaceE@Base 1.2.0
+ _ZTVN4QGst5Quick9VideoItemE@Base 1.2.0
+ _ZTVN5QGlib7Private15ClosureDataBaseE@Base 1.2.0
+ (c++)"non-virtual thunk to QGst::Quick::VideoItem::~VideoItem()@Base" 1.2.0

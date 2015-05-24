@@ -1,4 +1,4 @@
-# SymbolsHelper-Confirmed: 1.1.90 amd64 i386
+# SymbolsHelper-Confirmed: 1.2.0 amd64
 libQtGStreamer-1.0.so.0 libqtgstreamer-1.0-0 #MINVER#
 * Build-Depends-Package: libqtgstreamer-dev
  _ZN4QGst10BufferList6createEv@Base 0.10.1
@@ -65,10 +65,10 @@ libQtGStreamer-1.0.so.0 libqtgstreamer-1.0-0 #MINVER#
  _ZN4QGst15SharedStructureD1Ev@Base 0.10.1
  _ZN4QGst15SharedStructureD2Ev@Base 0.10.1
  _ZN4QGst15StepDoneMessage6createERKN5QGlib10RefPointerINS_6ObjectEEENS_6FormatEydbbyb@Base 0.10.1
- (subst|arch=i386)_ZN4QGst16AllocationParams10setPaddingE{size_t}@Base 1.1.90
- (subst|arch=i386)_ZN4QGst16AllocationParams8setAlignE{size_t}@Base 1.1.90
+ (subst|arch=amd64 i386)_ZN4QGst16AllocationParams10setPaddingE{size_t}@Base 1.2.0
+ (subst|arch=amd64 i386)_ZN4QGst16AllocationParams8setAlignE{size_t}@Base 1.2.0
  _ZN4QGst16AllocationParams8setFlagsE6QFlagsINS_10MemoryFlagEE@Base 1.1.90
- (subst|arch=i386)_ZN4QGst16AllocationParams9setPrefixE{size_t}@Base 1.1.90
+ (subst|arch=amd64 i386)_ZN4QGst16AllocationParams9setPrefixE{size_t}@Base 1.2.0
  _ZN4QGst16AllocationParamsC1ERKS0_@Base 1.1.90
  _ZN4QGst16AllocationParamsC1Ev@Base 1.1.90
  _ZN4QGst16AllocationParamsC2ERKS0_@Base 1.1.90
@@ -297,7 +297,7 @@ libQtGStreamer-1.0.so.0 libqtgstreamer-1.0-0 #MINVER#
  _ZN4QGst9Allocator15getSystemMemoryEv@Base 1.1.90
  _ZN4QGst9Allocator4findEPKc@Base 1.1.90
  _ZN4QGst9Allocator4freeERN5QGlib10RefPointerINS_6MemoryEEE@Base 1.1.90
- (subst|arch=i386)_ZN4QGst9Allocator5allocE{size_t}RKNS_16AllocationParamsE@Base 1.1.90
+ (subst|arch=amd64 i386)_ZN4QGst9Allocator5allocE{size_t}RKNS_16AllocationParamsE@Base 1.2.0
  _ZN4QGst9CapsEvent6createERKN5QGlib10RefPointerINS_4CapsEEE@Base 1.1.90
  _ZN4QGst9ClockTime8fromTimeERK5QTime@Base 0.10.1
  _ZN4QGst9SeekEvent6createEdNS_6FormatE6QFlagsINS_8SeekFlagEENS_8SeekTypeExS5_x@Base 0.10.1

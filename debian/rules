@@ -2,27 +2,53 @@
 
 include /usr/share/dpkg/architecture.mk
 
-override_dh_auto_configure:
-	dh_auto_configure -- -DQTGSTREAMER_STATIC=OFF \
-	                     -DQTGSTREAMER_TESTS=OFF \
-	                     -DQTGSTREAMER_EXAMPLES=OFF \
-	                     -DGST_PACKAGE_NAME="QtGStreamer (Debian)" \
-	                     -DGST_PACKAGE_ORIGIN="http://packages.qa.debian.org/qt-gstreamer" \
-	                     -DUSE_QT_PLUGIN_DIR=OFF
+BUILD_QT5 := $(DEB_HOST_GNU_TYPE)-qt5
+CMAKE_OPTS :=  -DCMAKE_BUILD_TYPE=RelWithDebInfo \
+               -DQTGSTREAMER_STATIC=OFF \
+               -DQTGSTREAMER_TESTS=OFF \
+               -DQTGSTREAMER_EXAMPLES=OFF \
+               -DGST_PACKAGE_NAME="QtGStreamer (Debian)" \
+               -DGST_PACKAGE_ORIGIN="http://packages.qa.debian.org/qt-gstreamer" \
+               -DUSE_QT_PLUGIN_DIR=OFF
 
-override_dh_auto_build:
+override_dh_auto_configure:
+	dh_auto_configure -- $(CMAKE_OPTS)
+	dh_auto_configure --builddirectory=$(BUILD_QT5) -- \
+                          -DQT_VERSION=5 $(CMAKE_OPTS)
+
+override_dh_auto_build-arch:
 	dh_auto_build --parallel -- all doc
+	dh_auto_build --parallel --builddirectory=$(BUILD_QT5) -- all
+
+override_dh_auto_build-indep:
+	dh_auto_build --parallel --builddirectory=$(BUILD_QT5) -- doc
+
+override_dh_strip:
+	dh_strip -p libqtglib-2.0-0 \
+                 -p libqtgstreamer-1.0-0 \
+                 -p libqtgstreamerui-1.0-0 \
+                 -p libqtgstreamerutils-1.0-0 \
+                 -p qml-module-qtgstreamer \
+                 -p qtgstreamer-declarative \
+                 -p qtgstreamer-plugins \
+                 --dbg-package=qtgstreamer-dbg
+	dh_strip --remaining-packages --dbg-package=qt5gstreamer-dbg
 
 override_dh_auto_install:
 	dh_auto_install --parallel
+	dh_auto_install --parallel --builddirectory=$(BUILD_QT5)
 	cp -r obj-$(DEB_HOST_GNU_TYPE)/doc debian/tmp/doc
+	find debian/tmp/doc/html -name '*.md5' -exec rm {} \;
 	-rm debian/tmp/doc/html/jquery.js
+
+override_dh_auto_clean:
+	dh_auto_clean
+	rm -rf $(BUILD_QT5)
 
 override_dh_gencontrol:
 	mkdir -p debian/fake-home
 	HOME=debian/fake-home \
 	LD_LIBRARY_PATH=debian/qtgstreamer-plugins/usr/lib/$(DEB_HOST_MULTIARCH):$(LD_LIBRARY_PATH) \
-	    dh_gstscancodecs
 	rm -rf debian/fake-home
 	dh_gencontrol
 

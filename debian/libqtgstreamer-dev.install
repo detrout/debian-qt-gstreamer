@@ -1,4 +1,6 @@
 usr/include/QtGStreamer/*
-usr/lib/*/lib*.so
-usr/lib/*/pkgconfig/*
 usr/lib/*/cmake/QtGStreamer/*
+usr/lib/*/libQtGLib*.so
+usr/lib/*/libQtGStreamer*.so
+usr/lib/*/pkgconfig/QtGLib*
+usr/lib/*/pkgconfig/QtGStreamer*

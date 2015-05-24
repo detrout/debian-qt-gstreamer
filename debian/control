@@ -1,30 +1,33 @@
 Source: qt-gstreamer
 Section: libs
 Priority: optional
-Maintainer: Maintainers of GStreamer packages <pkg-gstreamer-maintainers@lists.alioth.debian.org>
+Maintainer: Debian/Kubuntu KDE Extras Team <pkg-kde-extras@lists.alioth.debian.org>
 Uploaders: George Kiagiadakis <kiagiadakis.george@gmail.com>,
            Diane Trout <diane@ghic.org>
-Build-Depends: debhelper (>= 9),
+Build-Depends: cmake (>= 2.8.6),
+               debhelper (>= 9),
+               doxygen,
                dpkg-dev (>= 1.16.1~),
-               pkg-kde-tools (>= 0.12),
-               cmake (>= 2.8.6),
+               graphviz,
+               libboost-dev (>= 1.39),
+               libgstreamer-plugins-base1.0-dev (>= 1.1.90),
+               libgstreamer1.0-dev (>= 1.1.90),
                libqt4-dev (>= 4:4.8.1),
                libqt4-opengl-dev (>= 4:4.8.1),
-               libboost-dev (>= 1.39),
-               libgstreamer1.0-dev (>= 1.1.90),
-               libgstreamer-plugins-base1.0-dev (>= 1.1.90),
-               doxygen,
-               graphviz
-Standards-Version: 3.9.5
+               libqt5opengl5-dev,
+               pkg-kde-tools (>= 0.12),
+               qtbase5-dev,
+               qtdeclarative5-dev
+Standards-Version: 3.9.6
 Homepage: http://gstreamer.freedesktop.org
+Vcs-Git: git://anonscm.debian.org/pkg-kde/kde-extras/qt-gstreamer.git
+Vcs-Browser: http://anonscm.debian.org/gitweb/?p=pkg-kde/kde-extras/qt-gstreamer.git
 
 Package: libqtglib-2.0-0
 Architecture: any
 Multi-Arch: same
 Pre-Depends: ${misc:Pre-Depends}
-Depends: ${shlibs:Depends},
-         ${misc:Depends},
-         libstdc++6 (>= 4.5.0~)
+Depends: libstdc++6 (>= 4.5.0~), ${misc:Depends}, ${shlibs:Depends}
 Description: C++ bindings library for GLib and GObject with a Qt-style API
  This package contains the QtGLib library, a library that provides
  C++ bindings for parts of the GLib and GObject APIs with a Qt-syle API.
@@ -34,52 +37,50 @@ Description: C++ bindings library for GLib and GObject with a Qt-style API
  .
  This library serves as a base for building the QtGStreamer bindings library.
  .
- This package is part of QtGStreamer.
+ This package is part of the Qt4 version of QtGStreamer.
 
 Package: libqtgstreamer-1.0-0
 Architecture: any
 Multi-Arch: same
 Pre-Depends: ${misc:Pre-Depends}
-Depends: ${shlibs:Depends},
-         ${misc:Depends}
+Depends: ${misc:Depends}, ${shlibs:Depends}
 Description: C++ bindings library for GStreamer with a Qt-style API
  This package contains the QtGStreamer library, a library that provides
  C++ bindings for GStreamer with a Qt-style API. The bindings are designed
  to be easy to use for C++ programmers that are used to the Qt API and
  also provide easier integration with Qt by using Qt's data types where
  applicable.
+ .
+ This package is part of the Qt4 version of QtGStreamer.
 
 Package: libqtgstreamerui-1.0-0
 Architecture: any
 Multi-Arch: same
 Pre-Depends: ${misc:Pre-Depends}
-Depends: ${shlibs:Depends},
-         ${misc:Depends}
+Depends: ${misc:Depends}, ${shlibs:Depends}
 Suggests: qtgstreamer-plugins
 Description: QtGStreamerUi library
  This package contains the QtGStreamerUi library, a library that provides
  helper classes for integrating GStreamer better in graphical Qt applications.
  .
- This package is part of QtGStreamer.
+ This package is part of the Qt4 version of QtGStreamer.
 
 Package: libqtgstreamerutils-1.0-0
 Architecture: any
 Multi-Arch: same
 Pre-Depends: ${misc:Pre-Depends}
-Depends: ${shlibs:Depends},
-         ${misc:Depends}
+Depends: ${misc:Depends}, ${shlibs:Depends}
 Description: QtGStreamerUtils library
  This package contains the QtGStreamerUtils library, a library that provides
  some high level utility classes that can be used with QtGStreamer.
  .
- This package is part of QtGStreamer.
+ This package is part of the Qt4 version of QtGStreamer.
 
 Package: qtgstreamer-plugins
 Architecture: any
 Multi-Arch: same
 Pre-Depends: ${misc:Pre-Depends}
-Depends: ${shlibs:Depends},
-         ${misc:Depends}
+Depends: ${misc:Depends}, ${shlibs:Depends}
 XB-GStreamer-Version: ${gstreamer:Version}
 XB-GStreamer-Elements: ${gstreamer:Elements}
 XB-GStreamer-URI-Sources: ${gstreamer:URISources}
@@ -94,28 +95,31 @@ Description: GStreamer plugins from QtGStreamer
  .
  Currently, this package contains the qtvideosink, qtglvideosink and
  qwidgetvideosink elements.
+ .
+ This package is part of the Qt4 version of QtGStreamer.
 
 Package: qtgstreamer-declarative
 Architecture: any
 Multi-Arch: same
 Pre-Depends: ${misc:Pre-Depends}
-Depends: ${shlibs:Depends},
-         ${misc:Depends}
+Depends: ${misc:Depends}, ${shlibs:Depends}
 Description: QML plugins from QtGStreamer
  This package contains QML plugins that are shipped together with the
  QtGStreamer bindings library. These plugins provide QML elements that
  enable better integration of GStreamer in QML-based GUI applications.
+ .
+ This package is part of the Qt4 version of QtGStreamer.
 
 Package: libqtgstreamer-dev
 Section: libdevel
 Architecture: any
-Depends: ${misc:Depends},
+Depends: libboost-dev (>= 1.39),
+         libqt4-dev (>= 4:4.8.1),
          libqtglib-2.0-0 (= ${binary:Version}),
          libqtgstreamer-1.0-0 (= ${binary:Version}),
          libqtgstreamerui-1.0-0 (= ${binary:Version}),
          libqtgstreamerutils-1.0-0 (= ${binary:Version}),
-         libqt4-dev (>= 4:4.8.1),
-         libboost-dev (>= 1.39)
+         ${misc:Depends}
 Suggests: qtgstreamer-doc
 Description: Development headers for QtGStreamer
  QtGStreamer provides C++ bindings for GStreamer with a Qt-style API,
@@ -123,11 +127,13 @@ Description: Development headers for QtGStreamer
  .
  This package provides the necessary development files for building
  C++/Qt applications that use the QtGStreamer library.
+ .
+ This package is part of the Qt4 version of QtGStreamer.
 
 Package: qtgstreamer-doc
 Section: doc
 Architecture: all
-Depends: ${misc:Depends}, libjs-jquery
+Depends: libjs-jquery, ${misc:Depends}
 Suggests: libqtgstreamer-dev
 Description: QtGStreamer API documentation
  QtGStreamer provides C++ bindings for GStreamer with a Qt-style API,
@@ -141,15 +147,157 @@ Section: debug
 Priority: extra
 Architecture: any
 Multi-Arch: same
-Depends: ${misc:Depends},
-         libqtglib-2.0-0 (= ${binary:Version}),
+Depends: libqtglib-2.0-0 (= ${binary:Version}),
          libqtgstreamer-1.0-0 (= ${binary:Version}),
          libqtgstreamerui-1.0-0 (= ${binary:Version}),
          libqtgstreamerutils-1.0-0 (= ${binary:Version}),
-         qtgstreamer-plugins (= ${binary:Version})
+         qtgstreamer-plugins (= ${binary:Version}),
+         ${misc:Depends}
 Description: Debug symbols for QtGStreamer
  QtGStreamer provides C++ bindings for GStreamer with a Qt-style API,
  plus some helper classes for integrating GStreamer better in Qt applications.
  .
  This package contains the debug symbols for the various binaries shipped
  with QtGStreamer.
+ .
+ This package is part of the Qt4 version of QtGStreamer.
+
+Package: libqt5glib-2.0-0
+Architecture: any
+Multi-Arch: same
+Pre-Depends: ${misc:Pre-Depends}
+Depends: libstdc++6 (>= 4.5.0~), ${misc:Depends}, ${shlibs:Depends}
+Description: C++ bindings library for GLib and GObject with a Qt-style API - Qt 5 build
+ This package contains the QtGLib library, a library that provides
+ C++ bindings for parts of the GLib and GObject APIs with a Qt-syle API.
+ The bindings are designed to be easy to use for C++ programmers that are
+ used to the Qt API and also provide easier integration with Qt by using
+ Qt's data types where applicable.
+ .
+ This library serves as a base for building the QtGStreamer bindings library.
+ .
+ This package is part of the Qt5 version of QtGStreamer.
+
+Package: libqt5gstreamer-1.0-0
+Architecture: any
+Multi-Arch: same
+Pre-Depends: ${misc:Pre-Depends}
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: C++ bindings library for GStreamer with a Qt-style API - Qt 5 build
+ This package contains the QtGStreamer library, a library that provides
+ C++ bindings for GStreamer with a Qt-style API. The bindings are designed
+ to be easy to use for C++ programmers that are used to the Qt API and
+ also provide easier integration with Qt by using Qt's data types where
+ applicable.
+ .
+ This package is part of the Qt5 version of QtGStreamer.
+
+Package: libqt5gstreamerui-1.0-0
+Architecture: any
+Multi-Arch: same
+Pre-Depends: ${misc:Pre-Depends}
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Suggests: qtgstreamer-plugins
+Description: QtGStreamerUi library - Qt 5 build
+ This package contains the QtGStreamerUi library, a library that provides
+ helper classes for integrating GStreamer better in graphical Qt applications.
+ .
+ This package is part of the Qt5 version of QtGStreamer.
+
+Package: libqt5gstreamerutils-1.0-0
+Architecture: any
+Multi-Arch: same
+Pre-Depends: ${misc:Pre-Depends}
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: QtGStreamerUtils library - Qt 5 build
+ This package contains the QtGStreamerUtils library, a library that provides
+ some high level utility classes that can be used with QtGStreamer.
+ .
+ This package is part of the Qt5 version of QtGStreamer.
+
+Package: libqt5gstreamerquick-1.0-0
+Architecture: any
+Multi-Arch: same
+Pre-Depends: ${misc:Pre-Depends}
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Recommends: qml-module-qtgstreamer (= ${binary:Version})
+Description: QtGStreamerQuick library - Qt 5 build
+ This package contains the QtGStreamerQuick library, a library that provides
+ some high level utility classes that can be used with QtGStreamer.
+ .
+ This package is part of the Qt5 version of QtGStreamer.
+
+Package: qtgstreamer-plugins-qt5
+Architecture: any
+Multi-Arch: same
+Pre-Depends: ${misc:Pre-Depends}
+Depends: ${misc:Depends}, ${shlibs:Depends}
+XB-GStreamer-Version: ${gstreamer:Version}
+XB-GStreamer-Elements: ${gstreamer:Elements}
+XB-GStreamer-URI-Sources: ${gstreamer:URISources}
+XB-GStreamer-URI-Sinks: ${gstreamer:URISinks}
+XB-GStreamer-Encoders: ${gstreamer:Encoders}
+XB-GStreamer-Decoders: ${gstreamer:Decoders}
+Provides: ${gstreamer:Provides}
+Description: GStreamer plugins from QtGStreamer - Qt 5 build
+ This package contains GStreamer plugins that are shipped together with
+ the QtGStreamer bindings library. These plugins provide GStreamer elements
+ that enable better integration of GStreamer in Qt applications.
+ .
+ Currently, this package contains the qtvideosink, qtglvideosink and
+ qwidgetvideosink elements.
+ .
+ This package is part of the Qt5 version of QtGStreamer.
+
+Package: libqt5gstreamer-dev
+Section: libdevel
+Architecture: any
+Depends: libboost-dev (>= 1.39),
+         libqt5glib-2.0-0 (= ${binary:Version}),
+         libqt5gstreamer-1.0-0 (= ${binary:Version}),
+         libqt5gstreamerui-1.0-0 (= ${binary:Version}),
+         libqt5gstreamerutils-1.0-0 (= ${binary:Version}),
+         libqt5gstreamerquick-1.0-0 (= ${binary:Version}),
+         qtbase5-dev,
+         ${misc:Depends}
+Suggests: qtgstreamer-doc
+Description: Development headers for QtGStreamer - Qt 5 build
+ QtGStreamer provides C++ bindings for GStreamer with a Qt-style API,
+ plus some helper classes for integrating GStreamer better in Qt applications.
+ .
+ This package provides the necessary development files for building
+ C++/Qt applications that use the QtGStreamer library.
+ .
+ This package is part of the Qt5 version of QtGStreamer.
+
+Package: qml-module-qtgstreamer
+Architecture: any
+Multi-Arch: same
+Pre-Depends: ${misc:Pre-Depends}
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: QML plugins from QtGStreamer - Qt 5 build
+ This package contains QML plugins that are shipped together with the
+ QtGStreamer bindings library. These plugins provide QML elements that
+ enable better integration of GStreamer in QML-based GUI applications.
+ .
+ This package is part of the Qt5 version of QtGStreamer.
+
+Package: qt5gstreamer-dbg
+Section: debug
+Priority: extra
+Architecture: any
+Multi-Arch: same
+Depends: libqt5glib-2.0-0 (= ${binary:Version}),
+         libqt5gstreamer-1.0-0 (= ${binary:Version}),
+         libqt5gstreamerui-1.0-0 (= ${binary:Version}),
+         libqt5gstreamerutils-1.0-0 (= ${binary:Version}),
+         qtgstreamer-plugins-qt5 (= ${binary:Version}),
+         ${misc:Depends}
+Description: Debug symbols for QtGStreamer - Qt 5 build
+ QtGStreamer provides C++ bindings for GStreamer with a Qt-style API,
+ plus some helper classes for integrating GStreamer better in Qt applications.
+ .
+ This package contains the debug symbols for the various binaries shipped
+ with QtGStreamer.
+ .
+ This package is part of the Qt5 version of QtGStreamer.
