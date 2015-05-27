@@ -1,3 +1,9 @@
+qt-gstreamer (1.2.0-2ubuntu1) trusty; urgency=medium
+
+  * Release for trusty (14.04)
+
+ -- Diane Trout <diane@ghic.org>  Sat, 23 May 2015 20:18:15 -0700
+
 qt-gstreamer (1.2.0-2) unstable; urgency=medium
 
   * Add disable-doxygen-timestamp.patch to help make package
